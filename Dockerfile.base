@@ -1,0 +1,11 @@
+# Front docker image building file
+
+FROM node:16.9.1
+LABEL maintainer Raphael Tahar <raphael.tahar@snapshift.co>
+
+RUN yarn global nodemon
+RUN yarn
+
+COPY .env.sample .env
+RUN mkdir -p ~/.puma-dev
+RUN echo "18009" > ~/.puma-dev/app.snapshift

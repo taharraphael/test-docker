@@ -1,0 +1,14 @@
+# Front docker image building file for development
+
+FROM node:16.9.1
+LABEL maintainer Raphael Tahar <raphael.tahar@snapshift.co>
+
+ENV PATH /front/bin/$PATH
+
+# RUN yarn start
+# COPY /dist /front
+
+# RUN adduser -u 1000 -g 1000 -h . -D snapshift
+RUN yarn
+
+CMD ["yarn", "start"]
